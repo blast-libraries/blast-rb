@@ -1,6 +1,8 @@
+require 'parser/current'
+
 module Blast
   def self.parse(code)
     ast = Parser::CurrentRuby.parse code
-    # serialize to blast
+	Adapter.new(ast).adapt    
   end
 end
